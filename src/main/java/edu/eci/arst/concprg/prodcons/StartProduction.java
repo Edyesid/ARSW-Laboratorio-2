@@ -17,24 +17,23 @@ import java.util.logging.Logger;
 
 public class StartProduction {
     
-    
     public static void main(String[] args) {
         
         Queue<Integer> queue=new LinkedBlockingQueue<>();
-        
-        
-        new Producer(queue,Long.MAX_VALUE).start();
-        
-        //let the producer create products for 5 seconds (stock).
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(StartProduction.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+        int limit = 10;
         
         new Consumer(queue).start();
+        
+        new Producer(queue,limit).start();
+        
+        //new Producer(queue,Long.MAX_VALUE).start();
+        
+        //let the producer create products for 5 seconds (stock).
+        
+        /*try {
+            Thread.sleep(1000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(StartProduction.class.getName()).log(Level.SEVERE, null, ex);
+        }*/
     }
-    
-
 }
