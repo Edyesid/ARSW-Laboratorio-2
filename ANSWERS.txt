@@ -1,0 +1,2 @@
+Al eliminar los inmortales muertos, puede generarse una condición de carrera en la lista de inmortales, ya que puede suceder que un thread intente usar el inmortal y al mismo tiempo otro Thread 
+lo intente quitar de la lista
