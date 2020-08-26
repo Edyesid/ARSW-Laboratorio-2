@@ -84,13 +84,13 @@ En el archivo ANSWERS.txt se encuentra la respuesta
 
 Acá mostramos la sincronización de la lista de inmortales
 
-IMAGEN
+![lista sincronizada](https://user-images.githubusercontent.com/54051399/91251576-5d17cf80-e721-11ea-9d20-1875e0a0f3fa.PNG)
 
 2 Corregir el problema anterior SIN usar la sincronización, ya que hacer que el acceso a la lista compartida de inmortales sea secuencial haría que la simulación fuera extremadamente lenta.
 
 Al no poder utilizar la sincronización lo que hacemos es utilizar la clase CopyOnWriteArrayList para obtener la lista concurrente la cual nos reducira el tiempo de ejecución y la sincrinizara de la mimsa manera sin hacer que el acceso a la lista sea de manera secuencial.
 
-IMAGEN
+![copy on wirte](https://user-images.githubusercontent.com/54051399/91251517-3fe30100-e721-11ea-9dd8-bf79cb6b1bd2.PNG)
 
 11 Para terminar, implemente la opción STOP.
 
