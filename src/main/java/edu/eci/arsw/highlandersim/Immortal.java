@@ -2,6 +2,7 @@ package edu.eci.arsw.highlandersim;
 
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class Immortal extends Thread {
 
@@ -11,7 +12,7 @@ public class Immortal extends Thread {
     
     private int defaultDamageValue;
 
-    private final List<Immortal> immortalsPopulation;
+    private final CopyOnWriteArrayList<Immortal> immortalsPopulation;
 
     private final String name;
 
@@ -20,7 +21,7 @@ public class Immortal extends Thread {
     private boolean flag;
 
 
-    public Immortal(String name, List<Immortal> immortalsPopulation, int health, int defaultDamageValue, ImmortalUpdateReportCallback ucb) {
+    public Immortal(String name, CopyOnWriteArrayList<Immortal> immortalsPopulation, int health, int defaultDamageValue, ImmortalUpdateReportCallback ucb) {
         super(name);
         this.updateCallback=ucb;
         this.name = name;
@@ -33,6 +34,8 @@ public class Immortal extends Thread {
     public void run() {
 
         while (true) {
+        	
+        	Immortal im;
         	
         	if (flag) {
         		synchronized(this) {
@@ -47,7 +50,7 @@ public class Immortal extends Thread {
         		}
         	}
         	
-            Immortal im;
+            
 
             int myIndex = immortalsPopulation.indexOf(this);
 

@@ -1,2 +1,9 @@
-Al eliminar los inmortales muertos, puede generarse una condición de carrera en la lista de inmortales, ya que puede suceder que un thread intente usar el inmortal y al mismo tiempo otro Thread 
-lo intente quitar de la lista
+Cuando se utiliza una cantidad baja de hilos el  programa llega a un punto en el que ya no responde
+ya que la probabilidad de que la vida de cada hilo llega a 0 es muy baja por lo cual se entraria
+en un punto donde el programa donde ya no habra la posibilidad de eliminar ciertos hilos.
+Cuando es una cantidad de hilos más grande al eliminar los inmortales muertos, puede generarse una
+condición de carrera en la lista de inmortales, ya que puede suceder que un thread intente usar el
+inmortal y al mismo tiempo otro Thread lo intente quitar de la lista, con esta condición de carrera
+no se podria asegurar la integridad de los datos en este caso, los inmortales.
+Para solucionar esto lo que haremos es sincronizar la lista de inmortales para eliminar esta
+condición de carrera.
