@@ -1,7 +1,21 @@
 # Laboratorio 2 ARSW
 ## Integrantes: Edwin Yesid Rodriguez Maldonado, Guillermo Esteban Bernal Bonilla
 ## Presentado a: Diego Alfonso Prieto Torres
+
+Codigos para ejecuación
+
+![mvn package](https://user-images.githubusercontent.com/54051399/91255186-d1ef0780-e729-11ea-804d-af9726717891.PNG)
+
+ControlFrame
+
+![ejecutar controlframe](https://user-images.githubusercontent.com/54051399/91255179-cf8cad80-e729-11ea-86ee-2ffa55f227c6.PNG)
+
+StartProduction
+
+![ejecutar startproduction](https://user-images.githubusercontent.com/54051399/91255169-cc91bd00-e729-11ea-8210-da97ec6c813c.PNG)
+
 ### Part I
+
 Thread control with wait/notify. Producer/consumer
 Check the operation of the program and run it. While this occurs, run jVisualVM and check the CPU consumption of the corresponding process. Why is this consumption? Which is the responsible class? 
 
