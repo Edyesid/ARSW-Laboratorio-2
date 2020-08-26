@@ -1,5 +1,7 @@
 # Laboratorio 2 ARSW
-## Part I
+## Integrantes: Edwin Yesid Rodriguez Maldonado, Guillermo Esteban Bernal Bonilla
+## Presentado a: Diego Alfonso Prieto Torres
+### Part I
 Thread control with wait/notify. Producer/consumer
 Check the operation of the program and run it. While this occurs, run jVisualVM and check the CPU consumption of the corresponding process. Why is this consumption? Which is the responsible class? 
 
@@ -15,7 +17,7 @@ Make the necessary adjustments so that the solution uses the CPU more efficientl
 
 Make the producer now produce very fast, and the consumer consumes slow. Taking into account that the producer knows a Stock limit (how many elements he should have, at most in the queue), make that limit be respected. Review the API of the collection used as a queue to see how to ensure that this limit is not exceeded. Verify that, by setting a small limit for the 'stock', there is no high CPU consumption or errors.
 
-## Parte II
+### Parte II
 
 1 Revise el programa "highlander-simulador", proporcionado en el paquete edu.eci.arsw.highlandersim. Este es un juego en el que:
  1 Tienes N jugadores inmortales. 
@@ -72,11 +74,23 @@ Con 10000
 
 10 Un elemento molesto para la simulación es que en un cierto punto de la misma hay pocos "inmortales" vivos haciendo peleas fallidas con "inmortales" ya muertos. Es necesario suprimir a los muertos inmortales de la simulación a medida que mueren. 
 
+Acá se muestra una forma de asegurar que no vaya a empezar el enfrentamiento si alguno de los dos ya esta muerto.
+
 ![remove](imagenes/remove.png)
 
 1 Analizando el esquema de operación de la simulación, ¿podría esto crear una condición de carrera? Implementar la funcionalidad, ejecutar la simulación y ver qué problema surge cuando hay muchos "inmortales" en ella. Escriba sus conclusiones al respecto en el archivo ANSWERS.txt.
 
+En el archivo ANSWERS.txt se encuentra la respuesta
+
+Acá mostramos la sincronización de la lista de inmortales
+
+IMAGEN
+
 2 Corregir el problema anterior SIN usar la sincronización, ya que hacer que el acceso a la lista compartida de inmortales sea secuencial haría que la simulación fuera extremadamente lenta.
+
+Al no poder utilizar la sincronización lo que hacemos es utilizar la clase CopyOnWriteArrayList para obtener la lista concurrente la cual nos reducira el tiempo de ejecución y la sincrinizara de la mimsa manera sin hacer que el acceso a la lista sea de manera secuencial.
+
+IMAGEN
 
 11 Para terminar, implemente la opción STOP.
 
